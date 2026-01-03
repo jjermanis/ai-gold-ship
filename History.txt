@@ -1,0 +1,12 @@
+version 1	15 minutes dev	2 minutes code gen	2 minutes test		19 minutes total
+
+Notes v1: As usual, I went for a basic version. Definitely not a finished product. Primary motives
+were to test use of Japanese language. The announcer would speak without an effort from me.
+When writing in Japanese, and I specific kanji or katakana, it would follow that. The grass race
+track had a nice effort. Horse would run from right-to-left, as designed. In the Chrome browser,
+you can switch to English - interesting to see. Much more to do!
+
+
+Not keeping track of TODOs yet. Far from the base game.
+
+

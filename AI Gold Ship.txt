@@ -1,0 +1,11 @@
+Create a single-page app in a single HTML file with the following requirements:
+- Design rule: the game should use the Japanese language is most places. The requirements here will state the language to use in some places. If it not stated, display and speak in Japanese.
+- Name of the game: "Horse Racing" (in kanji)
+- Goal: get your racing horse across the finish line first
+- the screen looks like a Japanese horse racing track, this one on grass
+- there is a finish line on the left side of the screen.
+- there are four racing horses on the right of the screen. Each horse has a different name and colors.
+- the first horse (on the top) is named "Player 1" (in katakana). The skin is beige. The fringe is dark brown.
+- the second horse (on the top) is named "Player 2" (in katakana). "Player" is written in katakana, and 2 is the normal English. The skin is dark brown. The fringe is white.
+- the third horse is named "Gold Ship" (in katakana). The skin is a light grey. The fringe is grey.
+- the fourth horse (at the bottom) is named "Safe Run" (in kanji). The skin is brown. The fringe is dark brown.
