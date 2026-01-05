@@ -10,3 +10,32 @@ you can switch to English - interesting to see. Much more to do!
 Not keeping track of TODOs yet. Far from the base game.
 
 
+version 2	14 minutes dev	2 minutes code gen	5 minutes test		40 minutes total
+
+Notes v2: I would say that this is the very basic version of the game. It is by no means complete.
+But it has the mechanism for a horse race.  Created a target speed for each horse. They all have a
+starting speed (5). There are controls added for Player 1 and 2. 
+In its initial version, the game did not appear to start. I mean, maybe it did start, but there was
+no motion at all. I asked for the button to be put back. The motion now worked.
+There are many changes to make to get to a playable version of the game. But now I think it's
+trackable. LOTS to do, but trackable.
+
+
+TODO the movement is based on the screen refresh rate via requestAnimationFrame(). Need
+	to have something based on timing to get a more predictable screen. Maybe 
+	lock the game to 30/60 FPS?
+TODO make sure that start button is part of text description. What's there was created
+	by Chat - spec it to make sure it remains.
+TODO seems like a basic bug. After a race is over, the next race will start at the
+	preceding speed.
+TODO another (probable) bug. Horse can be controlled to run right. Should be allowed?
+TODO better calibrate speeds. Have the speed be something that is accelerated to.
+TODO get the speeds right. This seems too fast... maybe?  Calibrate to real life speed.
+TODO horses look very abstract. Get them to look a bit more like a horse. 
+TODO introduce a longer track with scrolling
+TODO introduce specific strategies for Gold Ship and Safe Run
+TODO add UI to show selected target speeds and current speed.
+TODO add some randomness to acceleration to target speed.
+ChatGPT: Leg animation synced to speed
+ChatGPT: Live speed meters per player
+

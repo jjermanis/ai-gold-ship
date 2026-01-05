@@ -5,107 +5,146 @@
 <title>競馬</title>
 
 <style>
-    body {
-        margin: 0;
-        background: #1b5e20;
-        font-family: "Hiragino Kaku Gothic Pro", "Yu Gothic", sans-serif;
-        color: white;
-        text-align: center;
-    }
+body {
+    margin: 0;
+    background: #1b5e20;
+    font-family: "Hiragino Kaku Gothic Pro", "Yu Gothic", sans-serif;
+    color: white;
+}
 
-    h1 {
-        margin: 12px 0;
-        font-size: 38px;
-        letter-spacing: 4px;
-    }
+h1 {
+    text-align: center;
+    margin: 10px 0;
+    font-size: 38px;
+    letter-spacing: 4px;
+}
 
-    #track {
-        position: relative;
-        width: 100%;
-        height: 440px;
-        background: linear-gradient(#2e7d32, #1b5e20);
-        border-top: 10px solid #c8e6c9;
-        border-bottom: 10px solid #c8e6c9;
-        overflow: hidden;
-    }
+#track {
+    position: relative;
+    height: 460px;
+    background: linear-gradient(#2e7d32, #1b5e20);
+    border-top: 10px solid #c8e6c9;
+    border-bottom: 10px solid #c8e6c9;
+    overflow: hidden;
+}
 
-    /* Finish line (left side) */
-    #finish {
-        position: absolute;
-        left: 90px;
-        top: 0;
-        width: 14px;
-        height: 100%;
-        background: repeating-linear-gradient(
-            to bottom,
-            #ffffff 0px,
-            #ffffff 12px,
-            #000000 12px,
-            #000000 24px
-        );
-    }
+/* Finish line */
+#finish {
+    position: absolute;
+    left: 80px;
+    top: 0;
+    width: 14px;
+    height: 100%;
+    background: repeating-linear-gradient(
+        to bottom,
+        white 0px,
+        white 12px,
+        black 12px,
+        black 24px
+    );
+}
 
-    .horse {
-        position: absolute;
-        right: 40px;
-        width: 240px;
-        height: 70px;
-        display: flex;
-        align-items: center;
-        transition: right 0.03s linear;
-    }
+/* Horse container */
+.horse {
+    position: absolute;
+    right: 240px;
+    height: 70px;
+    width: 160px;
+}
 
-    .name {
-        width: 120px;
-        text-align: right;
-        margin-right: 10px;
-        font-size: 17px;
-        white-space: nowrap;
-    }
+/* Horse body */
+.body {
+    position: absolute;
+    width: 90px;
+    height: 36px;
+    border-radius: 18px;
+    top: 20px;
+}
 
-    .body {
-        width: 80px;
-        height: 34px;
-        border-radius: 18px;
-        position: relative;
-    }
+.neck {
+    position: absolute;
+    width: 26px;
+    height: 18px;
+    left: 70px;
+    top: 10px;
+    border-radius: 10px;
+}
 
-    .fringe {
-        position: absolute;
-        top: -7px;
-        left: 10px;
-        width: 26px;
-        height: 12px;
-        border-radius: 12px;
-    }
+.head {
+    position: absolute;
+    width: 26px;
+    height: 20px;
+    left: 90px;
+    top: 6px;
+    border-radius: 10px;
+}
 
-    /* Horse colors */
-    .p1 .body { background: #e6c8a0; }
-    .p1 .fringe { background: #3e2723; }
+.fringe {
+    position: absolute;
+    width: 22px;
+    height: 10px;
+    top: -6px;
+    left: 6px;
+    border-radius: 8px;
+}
 
-    .p2 .body { background: #4e342e; }
-    .p2 .fringe { background: #ffffff; }
+/* Legs */
+.leg {
+    position: absolute;
+    width: 6px;
+    height: 24px;
+    background: #333;
+    bottom: 0;
+}
+.leg.l1 { left: 12px; }
+.leg.l2 { left: 30px; }
+.leg.l3 { left: 58px; }
+.leg.l4 { left: 76px; }
 
-    .gold .body { background: #dcdcdc; }
-    .gold .fringe { background: #9e9e9e; }
+/* Fixed name labels */
+.name {
+    position: absolute;
+    right: 40px;
+    width: 180px;
+    font-size: 18px;
+}
 
-    .safe .body { background: #6d4c41; }
-    .safe .fringe { background: #3e2723; }
+/* Colors */
+.p1 .body, .p1 .neck, .p1 .head { background: #e6c8a0; }
+.p1 .fringe { background: #3e2723; }
 
-    button {
-        margin: 16px;
-        padding: 12px 28px;
-        font-size: 18px;
-        background: #ffeb3b;
-        border: none;
-        border-radius: 8px;
-        cursor: pointer;
-        font-weight: bold;
-    }
+.p2 .body, .p2 .neck, .p2 .head { background: #4e342e; }
+.p2 .fringe { background: white; }
 
-    button:hover {
-        background: #fdd835;
-    }
+.gold .body, .gold .neck, .gold .head { background: #dcdcdc; }
+.gold .fringe { background: #9e9e9e; }
+
+.safe .body, .safe .neck, .safe .head { background: #6d4c41; }
+.safe .fringe { background: #3e2723; }
+
+/* Start button */
+#startBtn {
+    position: fixed;
+    bottom: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ffeb3b;
+    border: none;
+    border-radius: 10px;
+    padding: 14px 34px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+#startBtn:hover {
+    background: #fdd835;
+}
+
+#info {
+    text-align: center;
+    margin: 6px;
+    font-size: 16px;
+}
 </style>
 </head>
 
@@ -113,68 +152,109 @@
 
 <h1>競馬</h1>
 
+<div id="info">
+プレイヤー1：Q ↑ / A ↓　｜　プレイヤー2：O ↑ / L ↓
+</div>
+
 <div id="track">
     <div id="finish"></div>
 
-    <div class="horse p1" style="top: 40px;">
-        <div class="name">プレイヤー1</div>
-        <div class="body"><div class="fringe"></div></div>
+    <div class="horse p1" style="top:40px">
+        <div class="body"><div class="fringe"></div>
+            <div class="leg l1"></div><div class="leg l2"></div>
+            <div class="leg l3"></div><div class="leg l4"></div>
+        </div>
+        <div class="neck"></div><div class="head"></div>
     </div>
+    <div class="name" style="top:55px">プレイヤー1</div>
 
-    <div class="horse p2" style="top: 140px;">
-        <div class="name">プレイヤー2</div>
-        <div class="body"><div class="fringe"></div></div>
+    <div class="horse p2" style="top:140px">
+        <div class="body"><div class="fringe"></div>
+            <div class="leg l1"></div><div class="leg l2"></div>
+            <div class="leg l3"></div><div class="leg l4"></div>
+        </div>
+        <div class="neck"></div><div class="head"></div>
     </div>
+    <div class="name" style="top:155px">プレイヤー2</div>
 
-    <div class="horse gold" style="top: 240px;">
-        <div class="name">ゴールドシップ</div>
-        <div class="body"><div class="fringe"></div></div>
+    <div class="horse gold" style="top:240px">
+        <div class="body"><div class="fringe"></div>
+            <div class="leg l1"></div><div class="leg l2"></div>
+            <div class="leg l3"></div><div class="leg l4"></div>
+        </div>
+        <div class="neck"></div><div class="head"></div>
     </div>
+    <div class="name" style="top:255px">ゴールドシップ</div>
 
-    <div class="horse safe" style="top: 340px;">
-        <div class="name">安全走</div>
-        <div class="body"><div class="fringe"></div></div>
+    <div class="horse safe" style="top:340px">
+        <div class="body"><div class="fringe"></div>
+            <div class="leg l1"></div><div class="leg l2"></div>
+            <div class="leg l3"></div><div class="leg l4"></div>
+        </div>
+        <div class="neck"></div><div class="head"></div>
     </div>
+    <div class="name" style="top:355px">安全走</div>
 </div>
 
-<button onclick="startRace()">レース開始</button>
+<button id="startBtn" onclick="startRace()">レース開始</button>
 
 <script>
-let racing = false;
 const horses = document.querySelectorAll(".horse");
+const names = document.querySelectorAll(".name");
+
+const speeds = [
+    { target: 5, current: 0 },
+    { target: 5, current: 0 },
+    { target: 5, current: 0 },
+    { target: 5, current: 0 }
+];
+
+let racing = false;
 
 function speak(text) {
-    const msg = new SpeechSynthesisUtterance(text);
-    msg.lang = "ja-JP";
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang = "ja-JP";
     speechSynthesis.cancel();
-    speechSynthesis.speak(msg);
+    speechSynthesis.speak(u);
 }
+
+document.addEventListener("keydown", e => {
+    if (e.key === "q") speeds[0].target++;
+    if (e.key === "a") speeds[0].target--;
+    if (e.key === "o") speeds[1].target++;
+    if (e.key === "l") speeds[1].target--;
+});
 
 function startRace() {
     if (racing) return;
     racing = true;
 
-    horses.forEach(h => h.style.right = "40px");
+    horses.forEach(h => h.style.right = "240px");
+    speeds.forEach(s => s.current = 2.5); // visible initial kick
 
-    speak("レースを開始します");
+    speak("レース開始");
 
-    const speeds = Array.from(horses).map(() => Math.random() * 2.5 + 1);
+    requestAnimationFrame(loop);
+}
 
-    const raceLoop = setInterval(() => {
-        horses.forEach((horse, i) => {
-            let pos = parseFloat(horse.style.right);
-            pos += speeds[i];
-            horse.style.right = pos + "px";
+function loop() {
+    if (!racing) return;
 
-            if (pos > window.innerWidth - 160) {
-                clearInterval(raceLoop);
-                racing = false;
+    horses.forEach((horse, i) => {
+        const s = speeds[i];
+        s.current += (s.target - s.current) * 0.15; // faster acceleration
 
-                const winner = horse.querySelector(".name").innerText;
-                speak(winner + " が 勝ちました");
-            }
-        });
-    }, 30);
+        let pos = parseFloat(horse.style.right);
+        pos += s.current;
+        horse.style.right = pos + "px";
+
+        if (pos > window.innerWidth - 220) {
+            racing = false;
+            speak(names[i].innerText + " が 勝ちました");
+        }
+    });
+
+    requestAnimationFrame(loop);
 }
 </script>
 

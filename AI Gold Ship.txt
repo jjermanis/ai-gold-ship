@@ -4,8 +4,12 @@ Create a single-page app in a single HTML file with the following requirements:
 - Goal: get your racing horse across the finish line first
 - the screen looks like a Japanese horse racing track, this one on grass
 - there is a finish line on the left side of the screen.
-- there are four racing horses on the right of the screen. Each horse has a different name and colors.
+- there are four racing horses on the right of the screen. A horse looks like a traditional race horse from the side. Each horse has a different name and colors.
 - the first horse (on the top) is named "Player 1" (in katakana). The skin is beige. The fringe is dark brown.
-- the second horse (on the top) is named "Player 2" (in katakana). "Player" is written in katakana, and 2 is the normal English. The skin is dark brown. The fringe is white.
+- the second horse (on the top) is named "Player 2" (in katakana). The skin is dark brown. The fringe is white.
 - the third horse is named "Gold Ship" (in katakana). The skin is a light grey. The fringe is grey.
 - the fourth horse (at the bottom) is named "Safe Run" (in kanji). The skin is brown. The fringe is dark brown.
+- the horses names are on the right-side of the screen. The names do not move during the race.
+- each player has a target speed. At the start of the race, all of them have a target speed of 5.
+- Player 1 can change their target speed. If they tap Q, their target speed increases by 1. If they tap A, their target speed decreases by 1.
+- Player 2 can change their target speed. If they tap O, their target speed increases by 1. If they tap L, their target speed decreases by 1.
