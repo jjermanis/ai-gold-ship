@@ -6,7 +6,6 @@ When writing in Japanese, and I specific kanji or katakana, it would follow that
 track had a nice effort. Horse would run from right-to-left, as designed. In the Chrome browser,
 you can switch to English - interesting to see. Much more to do!
 
-
 Not keeping track of TODOs yet. Far from the base game.
 
 
@@ -20,22 +19,38 @@ no motion at all. I asked for the button to be put back. The motion now worked.
 There are many changes to make to get to a playable version of the game. But now I think it's
 trackable. LOTS to do, but trackable.
 
+This is where I added the TODO list.
 
+
+version 3	21 minutes dev	2 minutes code gen	4 minutes test		1 hour 7 total
+
+Notes v3: This had two defects to fix. First, whatever speed a horse got to in a race, THAT would
+be the starting rate in the next race. At a start, it sets all horses to the intended speed of 5.
+Second, the UI allowed ridiculous behavior. If you slowed down enough, it let the horse run
+backwards. Likewise, there was no limit on top speed. I might change, but for now, min speed is
+0 and max speed is 20. The Start Race (in Japanese) was created by itself from Chat. I liked it -
+I added a line to the command to produce it; I asked Chat how to write that line. Finally, the
+last items was the most complicated: make the horses look more like horse. I provided a description
+of how to design it: like a video game from 1987, size 32x32, the already defined colors. The 
+first attempt... not horrible, but not good. I asked it to increase to 48x48, to make sure it
+used BOTH the colors (it only used one), and make sure it faces the right way (first one did not).
+THAT looks halfway decent. Good enough for now, will move forward.
+
+
+
+TODO bug was added. The race marks and ending to early. Quite far from the finish line.
+TODO the game needs a starting 
 TODO the movement is based on the screen refresh rate via requestAnimationFrame(). Need
 	to have something based on timing to get a more predictable screen. Maybe 
 	lock the game to 30/60 FPS?
-TODO make sure that start button is part of text description. What's there was created
-	by Chat - spec it to make sure it remains.
-TODO seems like a basic bug. After a race is over, the next race will start at the
-	preceding speed.
-TODO another (probable) bug. Horse can be controlled to run right. Should be allowed?
+TODO add 2-frame leg animation (Chat says classic NES trick - well said)
 TODO better calibrate speeds. Have the speed be something that is accelerated to.
 TODO get the speeds right. This seems too fast... maybe?  Calibrate to real life speed.
-TODO horses look very abstract. Get them to look a bit more like a horse. 
 TODO introduce a longer track with scrolling
 TODO introduce specific strategies for Gold Ship and Safe Run
 TODO add UI to show selected target speeds and current speed.
 TODO add some randomness to acceleration to target speed.
+TODO needs to calculate and present win-place-show at end
 ChatGPT: Leg animation synced to speed
 ChatGPT: Live speed meters per player
 
